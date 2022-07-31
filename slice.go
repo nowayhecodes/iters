@@ -1,10 +1,5 @@
 package iters
 
-type Iterator[T any] interface {
-	Next() bool
-	Value() T
-}
-
 type SliceIterator[T any] struct {
 	Elements []T
 	value    T
