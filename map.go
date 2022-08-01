@@ -14,8 +14,9 @@ func (iter *mapIterator[T]) Value() T {
 	return iter.mapper(value)
 }
 
-func Map[T any](iter Iterator[T], f func(T) T) Iterator[T] {
+// It just creates a map iterator and returns it.
+func Map[T any](iter Iterator[T], fn func(T) T) Iterator[T] {
 	return &mapIterator[T]{
-		iter, f,
+		iter, fn,
 	}
 }

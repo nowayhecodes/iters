@@ -6,6 +6,7 @@ type SliceIterator[T any] struct {
 	index    int
 }
 
+// Creates a slice iterator over the elements []T
 func NewSliceIterator[T any](elements []T) Iterator[T] {
 	return &SliceIterator[T]{
 		Elements: elements,
